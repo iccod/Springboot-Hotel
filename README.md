@@ -24,7 +24,10 @@ Spring boot 倦眠酒店网站
 ### 主要技术介绍
 
 技术栈：SpringBoot + SpringDataJPA + MySQL + Redis + RabbitMQ，采用半前后分离架构和Restful风格API设计。
+
 前端技术：Layui + Bootstrap + Echarts + Thymeleaf模板引擎。
+
 核心功能：集成阿里云SMS短信验证、OSS图片存储、QQ邮箱服务等第三方服务。
+
 技术亮点：Twitter雪花算法生成分布式ID、Bcrypt密码加密等。
 
