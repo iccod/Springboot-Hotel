@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>美食管理</title>
+    <style type="text/css">
+        html,body{margin:0;padding:0;}
+        .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+        .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+    </style>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    　　<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+<body>
+<!-- head 头部 -->
+<div id="head" th:include="common/index_header :: copyheader"></div>
+
+<!--<div id="google_map2_wrapper" align="center">-->
+<!--    <div style="width:100%;height:300px;border:#ccc solid 1px;" id="dituContent"></div>-->
+
+<!--    &lt;!&ndash;<iframe class="d_iframe" width="1366px" height="768px" src="#(session.http)" id="myiframe" scrolling="no" frameborder="0"></iframe>&ndash;&gt;-->
+<!--</div>-->
+
+<div class="breadcrumbs1_wrapper">
+    <div class="container">
+        <div class="breadcrumbs1"><a href="view">首页</a><span>/</span>美食推荐</div>
+    </div>
+</div>
+
+
+<div id="content">
+    <div class="container">
+
+        <div class="tabs_wrapper tabs1_wrapper">
+            <div class="tabs tabs2">
+                <div class="tabs_tabs tabs1_tabs">
+                    <ul>
+                        <li class="active hotels"><a href="#tabs-2">美食</a></li>
+                    </ul>
+
+                </div>
+                <div class="tabs_content tabs1_content">
+                    <div id="tabs-2">
+                        <form action="javascript:;" class="form1">
+                            <div class="row">
+                                <div class="col-sm-4 col-md-4">
+                                    <div class="select1_wrapper">
+                                        <label>各地美食名称:</label>
+                                        <div class="select1_inner">
+                                            <select class="select2 select" style="width: 100%">
+                                                <option value="1">成都：蜜汁菠蘿鴨</option>
+                                                <option value="2">重庆：龍京火鍋</option>
+                                                <option value="3">上海：火腿披薩肉</option>
+                                                <option value="4">北京：嫩牛肉</option>
+                                                <option value="5">拉萨：噴火羊肉串</option>
+                                                <option value="6">北京：意大利面</option>
+                                                <option value="7">湖北：韓式中午餐</option>
+                                                <option value="8">北京：北京烤鸭</option>
+                                                <option value="9">北京：宫保鸡丁</option>
+                                                <option value="10">内蒙：内蒙牛肉片</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-2">
+                                    <div class="input1_wrapper">
+                                        <label>开始:</label>
+                                        <div class="input1_inner">
+                                            <input type="text" class="input datepicker" value="年/月/日">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-2">
+                                    <div class="input1_wrapper">
+                                        <label>结束:</label>
+                                        <div class="input1_inner">
+                                            <input type="text" class="input datepicker" value="年/月/日">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-2">
+                                    <div class="button1_wrapper">
+                                        <button type="submit" class="btn-default btn-form1-submit">搜索</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                                <form action="javascript:;" class="form2 form2_hotels">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="select1_wrapper clearfix">
+                                                <label>成品:</label>
+                                                <div class="select1_inner">
+                                                    <select class="select2 select select3" style="width: 100%">
+                                                        <option value="1">内蒙牛肉片</option>
+                                                        <option value="2">韓式中午餐</option>
+                                                        <option value="3">意大利面</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="select1_wrapper clearfix">
+                                                <label>星期</label>
+                                                <div class="select1_inner">
+                                                    <select class="select2 select select3" style="width: 100%">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="3">4</option>
+                                                        <option value="3">5</option>
+                                                        <option value="3">6</option>
+                                                        <option value="3">7</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <ul class="ul3">
+                                    <li><a href="#">排行榜</a></li>
+                                    <li><a href="#">1.蜜汁菠蘿鴨</a></li>
+                                    <li><a href="#">2.龍京火鍋</a></li>
+                                    <li><a href="#">3.火腿披薩肉</a></li>
+                                    <li><a href="#">4.嫩牛肉</a></li>
+                                </ul>
+
+
+                                <div class="sm_slider sm_slider2">
+                                    <a class="sm_slider_prev" href="#"></a>
+                                    <a class="sm_slider_next" href="#"></a>
+                                    <div class="">
+                                        <div class="carousel-box">
+                                            <div class="inner">
+                                                <div class="carousel main">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="sm_slider_inner">
+                                                                <div class="txt1">烤鸭是具有世界声誉的北京著名菜式，起源于中国南北朝时期，《食珍录》中已记有炙鸭，在当时是宫廷食品。用料为优质肉食鸭北京鸭，果木炭火烤制，色泽红润，肉质肥而不腻，外脆里嫩。北京烤鸭分为两大流派，而北京最著名的烤鸭店也即是两派的代表。它以色泽红艳，肉质细嫩，味道醇厚，肥而不腻的特色，被誉为“天下美味”。
+                                                                </div>
+                                                                <div class="txt2">北京烤鸭</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="sm_slider_inner">
+                                                                <div class="txt1">火锅食材包括各种肉类、海鲜类、蔬菜类、豆制品类、菌菇类、蛋类制品、粉丝等，将其放入煮开的清水或特制的高汤锅底烫熟后食用。有些吃法还会蘸上调味料 一起食用。
+                                                                </div>
+                                                                <div class="txt2">四川火锅</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-9">
+
+                                <form action="javascript:;" class="form3 clearfix">
+                                    <div class="select1_wrapper txt">
+                                        <label>美食排序:</label>
+                                    </div>
+                                    <div class="select1_wrapper sel">
+                                        <div class="select1_inner">
+                                            <select class="select2 select" id="price" style="width: 100%" th:onchange="'javascript:test();'">
+                                                <option value="1">价格</option>
+                                                <option value="2">由高到低</option>
+                                                <option value="3">由低到高</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="select1_wrapper sel">
+                                        <div class="select1_inner">
+                                            <select class="select2 select" id="star" style="width: 100%" th:onchange="'javascript:test();'">
+                                                <option value="1">点击度</option>
+                                                <option value="2">由高到低</option>
+                                                <option value="3">由低到高</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="row">
+                                    <div class="col-sm-4" th:each="attr:${attrs}">
+                                        <div class="thumb5">
+                                            <div class="thumbnail clearfix">
+                                                <figure>
+                                                    <img th:src="@{${attr.img}}" class="img-responsive2 cates" style="border-radius: 72px">
+                                                    <div class="over">
+                                                        <div class="v1" th:text="${attr.name}"></div>
+                                                        <span style="color: yellow" th:size="10px" th:text="${attr.bed}"></span>
+                                                        <div class="v2"   th:text="${attr.miaoshu}"><span ></span></div>
+                                                    </div>
+                                                </figure>
+                                                <div class="caption">
+                                                    <div class="txt1" th:text="${attr.name}"></div>
+                                                    <div class="txt2">Twin / Double Room</div>
+                                                    <div class="txt3 clearfix">
+                                                        <div class="left_side">
+                                                            <div class="price" >$<span th:text="${attr.price}"></span></div>
+                                                        </div>
+                                                        <div class="right_side"><a src="#" class="btn-default btn1">详情</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br><br><br>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="pager_wrapper" style="padding-top: 10px">
+<!--                                        <ul class="pager clearfix" id="pages">-->
+<!--                                            <li class="prev"><a th:if="${not first}" th:href="@{/dist/hotels(start=${number -1})}">Previous</a></li>-->
+<!--                                            <li class="next"><a th:if="${not last}" th:href="@{/dist/hotels(start=${number+1})}">Next</a></li>-->
+<!--                                        </ul>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!--底部-->
+<div th:include="common/index_footer :: copyfooter"></div>
+
+
+</body>
+
+
+<script type="text/javascript" th:inline="javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+    }
+
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(116.395645,39.929986);//定义一个中心点坐标
+        map.centerAndZoom(point,12);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        map.addControl(ctrl_sca);
+    }
+
+
+    initMap();//创建和初始化地图
+
+
+    function test() {
+        var price1=[[${price}]]
+        var star1=[[${star}]]
+        var star=$("#star").val()
+        var price=$("#price").val()
+        console.log(price1+"======="+star1)
+        window.location.href="/dist/cate?star="+star+'&price='+price;
+    }
+</script>
+</html>

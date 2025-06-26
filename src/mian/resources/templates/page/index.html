@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Your description"/>
+    <meta name="keywords" content="Your keywords"/>
+    <meta name="author" content="Your name"/>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+
+<!-- head 头部 -->
+<div id="head" th:include="common/index_header :: copyheader"></div>
+
+
+<div id="slider_wrapper">
+    <div class="container">
+        <div id="slider_inner">
+            <div id="slider">
+                <div class="carousel-box">
+                    <div class="inner">
+                        <div class="carousel main">
+                            <ul>
+                                <li th:each="carousel : ${carousels}">
+                                    <div class="slider">
+                                        <div class="slider_inner">
+                                            <div class="txt1"><span th:text="${carousel.title}"></span></div>
+                                            <div class="txt2"><span th:text="${carousel.comment}"></span></div>
+                                            <div class="txt3"><span th:text="${carousel.scenictime}"></span></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider_pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--</div>-->
+
+<div id="why1">
+    <div class="container">
+
+        <h2 class="animated">为什么我们是最好的</h2>
+
+        <div class="title1 animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+            euismod <br>tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </div>
+
+        <br><br>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="thumb2 animated" data-animation="flipInY" data-animation-delay="200">
+                    <div class="thumbnail clearfix">
+                        <a href="#">
+                            <figure class="">
+                                <img th:src="@{https://travel-class.oss-cn-hangzhou.aliyuncs.com/images/%E8%A1%8C%E5%BD%B1%E6%97%85%E6%B8%B8/why1.png}" src="images/why1.png" alt=""
+                                     class="img1 img-responsive">
+                                <img th:src="@{https://travel-class.oss-cn-hangzhou.aliyuncs.com/images/%E8%A1%8C%E5%BD%B1%E6%97%85%E6%B8%B8/why1_hover.png}" src="images/why1_hover.png" alt=""
+                                     class="img2 img-responsive">
+                            </figure>
+                            <div class="caption">
+                                <div class="txt1">舒服的房间</div>
+                                <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil
+                                    imperdiet doming id quod mazim.
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumb2 animated" data-animation="flipInY" data-animation-delay="300">
+                    <div class="thumbnail clearfix">
+                        <a href="#">
+                            <figure class="">
+                                <img th:src="@{https://travel-class.oss-cn-hangzhou.aliyuncs.com/images/%E8%A1%8C%E5%BD%B1%E6%97%85%E6%B8%B8/why2.png}" src="images/why2.png" alt=""
+                                     class="img1 img-responsive">
+                                <img th:src="@{https://travel-class.oss-cn-hangzhou.aliyuncs.com/images/%E8%A1%8C%E5%BD%B1%E6%97%85%E6%B8%B8/why2_hover.png}" src="images/why2_hover.png" alt=""
+                                     class="img2 img-responsive">
+                            </figure>
+                            <div class="caption">
+                                <div class="txt1">整洁的装修</div>
+                                <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil
+                                    imperdiet doming id quod mazim.
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumb2 animated" data-animation="flipInY" data-animation-delay="400">
+                    <div class="thumbnail clearfix">
+                        <a href="#">
+                            <figure class="">
+                                <img src="https://travel-class.oss-cn-hangzhou.aliyuncs.com/images/%E8%A1%8C%E5%BD%B1%E6%97%85%E6%B8%B8/why3.png" alt="" class="img1 img-responsive">
+                                <img src="https://travel-class.oss-cn-hangzhou.aliyuncs.com/images/%E8%A1%8C%E5%BD%B1%E6%97%85%E6%B8%B8/why3_hover.png" alt="" class="img2 img-responsive">
+                            </figure>
+                            <div class="caption">
+                                <div class="txt1">预定的行程</div>
+                                <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil
+                                    imperdiet doming id quod mazim.
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumb2 animated" data-animation="flipInY" data-animation-delay="500">
+                    <div class="thumbnail clearfix">
+                        <a href="#">
+                            <figure class="">
+                                <img th:src="@{https://travel-class.oss-cn-hangzhou.aliyuncs.com/images/%E8%A1%8C%E5%BD%B1%E6%97%85%E6%B8%B8/why4.png}" src="images/why4.png" alt=""
+                                     class="img1 img-responsive">
+                                <img th:src="@{https://travel-class.oss-cn-hangzhou.aliyuncs.com/images/%E8%A1%8C%E5%BD%B1%E6%97%85%E6%B8%B8/why4_hover.png}" src="images/why4_hover.png" alt=""
+                                     class="img2 img-responsive">
+                            </figure>
+                            <div class="caption">
+                                <div class="txt1">很好的支持</div>
+                                <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil
+                                    imperdiet doming id quod mazim.
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="popular_cruises1">
+    <div class="container">
+
+        <h2 class="animated">推荐游览</h2>
+
+        <div class="title1 animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+            euismod <br>tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </div>
+
+        <br><br>
+
+        <div id="popular_wrapper" class="animated" data-animation="fadeIn" data-animation-delay="300">
+            <div id="popular_inner">
+                <div class="">
+                    <div id="popular">
+                        <div class="">
+                            <div class="carousel-box">
+                                <div class="inner">
+                                    <div class="carousel main">
+                                        <ul>
+                                            <li>
+                                                <div class="popular">
+                                                    <div class="popular_inner">
+                                                        <figure>
+                                                            <img th:src="@{/images/popular01.jpg}"
+                                                                 src="/images/popular01.jpg" alt=""
+                                                                 class="img-responsive">
+                                                            <div class="over">
+                                                                <div class="v1">
+                                                                    民宿房间 <span>17 Deal Offers</span>
+                                                                </div>
+                                                                <div class="v2">Lorem ipsum dolor sit amet, concateus.
+                                                                </div>
+                                                            </div>
+                                                        </figure>
+                                                        <div class="caption">
+                                                            <div class="txt1"><span>民宿地点</span> 7 Night Tour</div>
+                                                            <div class="txt2">Nam liber tempor cum soluta nobis eleifend
+                                                                option congue nihil imperdiet doming.
+                                                            </div>
+                                                            <div class="txt3 clearfix">
+                                                                <div class="left_side">
+                                                                    <div class="stars1">
+                                                                        <img th:src="@{/images/star1.png}"
+                                                                             src="images/star1.png" alt="">
+                                                                        <img th:src="@{/images/star1.png}"
+                                                                             src="images/star1.png" alt="">
+                                                                        <img th:src="@{/images/star1.png}"
+                                                                             src="images/star1.png" alt="">
+
+                                                                    </div>
+                                                                    <div class="nums">- 18 Reviews</div>
+                                                                </div>
+                                                                <div class="right_side"><a href="#"
+                                                                                           class="btn-default btn1">See
+                                                                    All</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="popular">
+                                                    <div class="popular_inner">
+                                                        <figure>
+                                                            <img th:src="@{/images/popular02.jpg}"
+                                                                 src="images/popular02.jpg" alt=""
+                                                                 class="img-responsive">
+                                                            <div class="over">
+                                                                <div class="v1">Mediterranean
+                                                                    <span>17 Deal Offers</span></div>
+                                                                <div class="v2">Lorem ipsum dolor sit amet, concateus.
+                                                                </div>
+                                                            </div>
+                                                        </figure>
+                                                        <div class="caption">
+                                                            <div class="txt1"><span>地中海</span> 18 Night Tour
+                                                            </div>
+                                                            <div class="txt2">Nam liber tempor cum soluta nobis eleifend
+                                                                option congue nihil imperdiet doming.
+                                                            </div>
+                                                            <div class="txt3 clearfix">
+                                                                <div class="left_side">
+                                                                    <div class="stars1">
+                                                                        <img th:src="@{/images/star1.png}"
+                                                                             src="images/star1.png" alt="">
+
+                                                                    </div>
+                                                                    <div class="nums">- 168 Reviews</div>
+                                                                </div>
+                                                                <div class="right_side"><a href="#"
+                                                                                           class="btn-default btn1">See
+                                                                    All</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="popular">
+                                                    <div class="popular_inner">
+                                                        <figure>
+                                                            <img th:src="@{/images/popular03.jpg}"
+                                                                 src="images/popular03.jpg" alt=""
+                                                                 class="img-responsive">
+                                                            <div class="over">
+                                                                <div class="v1">民宿房间
+                                                                    <span>17 Deal Offers</span></div>
+                                                                <div class="v2">Lorem ipsum dolor sit amet, concateus.
+                                                                </div>
+                                                            </div>
+                                                        </figure>
+                                                        <div class="caption">
+                                                            <div class="txt1"><span>民宿房间</span> 18 Night Tour
+                                                            </div>
+                                                            <div class="txt2">Nam liber tempor cum soluta nobis eleifend
+                                                                option congue nihil imperdiet doming.
+                                                            </div>
+                                                            <div class="txt3 clearfix">
+                                                                <div class="left_side">
+                                                                    <div class="stars1">
+                                                                        <img th:src="@{/images/star1.png}"
+                                                                             src="images/star1.png" alt="">
+                                                                        <img th:src="@{/images/star1.png}"
+                                                                             src="images/star1.png" alt="">
+
+                                                                    </div>
+                                                                    <div class="nums">- 168 Reviews</div>
+                                                                </div>
+                                                                <div class="right_side"><a href="#"
+                                                                                           class="btn-default btn1">See
+                                                                    All</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popular_pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="happy1">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-md-push-6">
+                <div class="content">
+                    <div class="txt1 animated" data-animation="fadeIn" data-animation-delay="100">统计民宿周围景点情况</div>
+
+                    <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="0">
+                        <div class="txt">鼓浪屿</div>
+                        <div class="bg">
+                            <div class="animated-distance" data-num="94" data-duration="1300" data-animation-delay="0">
+                                <span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="100">
+                        <div class="txt">华山</div>
+                        <div class="bg">
+                            <div class="animated-distance" data-num="87" data-duration="1300"
+                                 data-animation-delay="100"><span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="200">
+                        <div class="txt">重庆欢乐谷</div>
+                        <div class="bg">
+                            <div class="animated-distance" data-num="48" data-duration="1300"
+                                 data-animation-delay="200"><span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="300">
+                        <div class="txt">九寨沟</div>
+                        <div class="bg">
+                            <div class="animated-distance" data-num="78" data-duration="1300"
+                                 data-animation-delay="300"><span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="300">
+                        <div class="txt">黄果树</div>
+                        <div class="bg">
+                            <div class="animated-distance" data-num="88" data-duration="1300"
+                                 data-animation-delay="300"><span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="300">
+                        <div class="txt">宽窄巷子</div>
+                        <div class="bg">
+                            <div class="animated-distance" data-num="71" data-duration="1300"
+                                 data-animation-delay="300"><span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="300">
+                        <div class="txt">长城</div>
+                        <div class="bg">
+                            <div class="animated-distance" data-num="77" data-duration="1300"
+                                 data-animation-delay="300"><span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="300">
+                        <div class="txt">玉龙雪山</div>
+                        <div class="bg">
+                            <div class="animated-distance" data-num="81" data-duration="1300"
+                                 data-animation-delay="300"><span></span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-md-pull-6 animated" data-animation="fadeInLeft"
+                 data-animation-delay="200">
+                <img th:src="@{https://travel-class.oss-cn-hangzhou.aliyuncs.com/images/%E8%A1%8C%E5%BD%B1%E6%97%85%E6%B8%B8/people.png}" src="images/people.png" alt="" class="img1 img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--底部-->
+<div th:include="common/index_footer :: copyfooter"></div>
+</body>
+
+
+<script>
+    function travel() {
+        window.location.href="/dist/travel"
+    }
+    
+    
+</script>
+
+</html>
